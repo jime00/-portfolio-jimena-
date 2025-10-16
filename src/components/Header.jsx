@@ -1,27 +1,22 @@
-import React from 'react'
+
+
+
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className="site-header">
-      <div className="brand">
-        <div style={{
-          width:46, height:46, borderRadius:10, background:'#e182a0ff', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700, color:'#dd2aaaff'
-        }}>JB</div>
-        <div>
-          <h1>Jimena Bello</h1>
-          <p className="small-muted">Information Technology • Web Developer • Code </p>
-        </div>
-      </div>
-
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#ai">AI</a>
-        <a href="#contact">Contact</a>
+    <header style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#b78eb2ff' }}>
+      <h1 style={{ color: 'white' }}>My Portfolio</h1>
+      <nav style={{ marginTop: '1rem' }}>
+        <Link to="/" style={{ margin: '0 10px', color: 'white' }}>Home</Link>
+        <Link to="/about" style={{ margin: '0 10px', color: 'white' }}>About</Link>
+        <Link to="/projects" style={{ margin: '0 10px', color: 'white' }}>Projects</Link>
+        <Link to="/contact" style={{ margin: '0 10px', color: 'white' }}>Contact</Link>
+        <Link to="/chatbot" style={{ margin: '0 10px', color: 'white' }}>Chatbot</Link>
       </nav>
     </header>
-  )
+  );
 }
-
 
 

@@ -1,47 +1,117 @@
-import React, { useState } from 'react'
+
+
+import React, { useState } from "react";
 
 export default function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [msg, setMsg] = useState('')
-  const [sent, setSent] = useState(false)
+  const [name, setName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    setSent(true)
-    setName(''); setEmail(''); setMsg('')
-    setTimeout(()=>setSent(false), 3000)
+  const yourEmail = "belloji@kean.edu"; 
+
+  function openMailClient(e) {
+    e.preventDefault();
+
+  
+    const subject = `Portfolio contact from ${name || "a visitor"}`;
+    const body = `Name: ${name || "N/A"}%0D%0AEmail: ${senderEmail || "N/A"}%0D%0A%0D%0A${encodeURIComponent(
+      message || "(no message)"
+    )}`;
+
+    // encodeURIComponent for subject too
+    const mailtoLink = `mailto:${yourEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${body}`;
+
+    // Open user's default mail client
+    window.location.href = mailtoLink;
   }
 
   return (
-    <section id="contact" className="card">
-      <div className="section-title">Contact:    
-        Jimena Bello - belloji@kean.edu 
-      </div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Please enter your name:
-          <input type="text" value={name} onChange={e=>setName(e.target.value)} required />
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <h2>Contact Me</h2>
+
+      <form
+        onSubmit={openMailClient}
+        style={{
+          display: "inline-block",
+          textAlign: "left",
+          maxWidth: 520,
+          width: "100%",
+          marginTop: 12,
+        }}
+      >
+        <label style={{ display: "block", marginBottom: 8 }}>
+          Your Name: 
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+            style={{ width: "100%", padding: 8, marginTop: 6 }}
+          />
         </label>
-        <div style={{height:8}} />
-        <label>
-          Please enter your email:
-          <input type="text" value={email} onChange={e=>setEmail(e.target.value)} required />
+
+        <label style={{ display: "block", marginBottom: 8 }}>
+          Your email:
+          <input
+            type="Email"
+            value={senderEmail}
+            onChange={(e) => setSenderEmail(e.target.value)}
+            placeholder="you@example.com"
+            style={{ width: "100%", padding: 8, marginTop: 6 }}
+          />
         </label>
-        <div style={{height:8}} />
-        <label>
-          Feel free to contact me! : 
-          <textarea rows="4" value={msg} onChange={e=>setMsg(e.target.value)} required />
+
+        <label style={{ display: "block", marginBottom: 8 }}>
+          Message:
+          <textarea
+            rows="5"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Write a short message..."
+            style={{ width: "100%", padding: 8, marginTop: 6 }}
+          />
         </label>
-        <div style={{height:8}} />
-        <button className="primary" type="submit">Send message</button>
-        {sent && <p className="small-muted" style={{marginTop:10}}>Thanks — message sent!!! (demo).</p>}
+
+        <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+          <button
+            type="submit"
+            style={{
+              padding: "10px 14px",
+              background: "#e46ba1ff",
+              color: "white",
+              border: "none",
+              borderRadius: 8,
+              cursor: "pointer",
+            }}
+          >
+            Open Mail App
+          </button>
+
+   
+          <a
+            href={`mailto:${yourEmail}`}
+            style={{
+              padding: "10px 14px",
+              background: "#edc0c0ff",
+              color: "#0b1220",
+              textDecoration: "none",
+              borderRadius: 8,
+              display: "inline-flex",
+              alignItems: "center",
+            }}
+          >
+            Email me
+          </a>
+        </div>
+
+        <p style={{ color: "#666", marginTop: 10, fontSize: 13 }}>
+          
+        </p>
       </form>
-    </section>
-  )
+    </div>
+  );
 }
-
-
 
 
