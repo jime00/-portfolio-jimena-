@@ -4,9 +4,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import About from "./components/About";  
-import Projects from './components/project';
-import Contact from './components/contact';
-import Chatbot from './components/chatbot';
+import Projects from './components/Project';
+import Contact from './components/Contact';
+import Chatbot from './components/Chatbot';
 import Home from './components/Home';
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />  {/* ✅ this is correct */}
+            <Route path="/about" element={<About />} />  
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/chatbot" element={<Chatbot />} />

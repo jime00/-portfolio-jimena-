@@ -13,7 +13,7 @@ export default function Chatbot() {
     setHistory(h => [...h, userMsg])
     
     const lower = q.toLowerCase()
-    let reply = "Hmm, I’m not sure about that. Try asking about Jimena’s major, school, or skills!"
+    let reply = "Hmm, I’m not sure about that. Try asking about Jimena’s major, school, projects or skills!"
 
     
     if (lower.includes('name')) {
@@ -23,7 +23,7 @@ export default function Chatbot() {
     } else if (lower.includes('major')) {
       reply = "Jimena’s major is Information Technology 💻"
     } else if (lower.includes('skills')) {
-      reply = "She’s skilled in HTML, CSS, JavaScript, Python, React, and Node.js 💪"
+      reply = "She’s skilled in HTML, CSS, JavaScript, Python, MySQL, React, and Node.js 💪"
     } else if (lower.includes('project')) {
       reply = "One of her projects includes an AI-powered portfolio website — like this one!"
     } else if (lower.includes('hobby') || lower.includes('fun')) {
@@ -50,7 +50,7 @@ export default function Chatbot() {
         flexDirection: 'column',
         gap: 12,
         position: 'relative',
-        backgroundImage: `url(${girlCoding})`, // <-- using codings.png as the background
+        backgroundImage: `url(${girlCoding})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         borderRadius: '12px',
