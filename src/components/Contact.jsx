@@ -18,12 +18,12 @@ export default function Contact() {
       message || "(no message)"
     )}`;
 
-    // encodeURIComponent for subject too
+   
     const mailtoLink = `mailto:${yourEmail}?subject=${encodeURIComponent(
       subject
     )}&body=${body}`;
 
-    // Open user's default mail client
+  
     window.location.href = mailtoLink;
   }
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import About from './components/about';
+import About from "./components/About";  
 import Projects from './components/project';
 import Contact from './components/contact';
 import Chatbot from './components/chatbot';
@@ -17,20 +17,16 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About />} />  {/* ✅ this is correct */}
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/chatbot" element={<Chatbot />} />
           </Routes>
         </main>
         <footer style={{ textAlign: 'center', padding: '2rem 0', color: '#777' }}>
-          © {new Date().getFullYear()} — Jimena Bello       
+          © {new Date().getFullYear()} — Jimena Bello
         </footer>
       </div>
     </Router>
   );
 }
-
-
-
-
