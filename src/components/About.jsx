@@ -6,6 +6,7 @@ import keanImage from "../assets/kean.jpg";
 import codingImage from "../assets/codes.jpg"; 
 
 export default function About() {
+ 
   return (
     <section id="about" className="card" style={{ textAlign: "center" }}>
       <div className="section-title">About Me</div>
