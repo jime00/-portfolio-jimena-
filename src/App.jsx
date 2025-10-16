@@ -3,10 +3,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Project';
-import Contact from './components/Contact';
-import Chatbot from './components/Chatbot';
+import About from './components/about';
+import Projects from './components/project';
+import Contact from './components/contact';
+import Chatbot from './components/chatbot';
 import Home from './components/Home';
 
 export default function App() {
