@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react'
 import girlCoding from '../assets/codings.jpg' 
 
 export default function Chatbot() {
   const [q, setQ] = useState('')
   const [history, setHistory] = useState([
-    { from: 'bot', text: "Hi! I’m Jimena’s AI Assistant 🌷 . You can ask me about her background, skills, or projects!" }
+    { from: 'bot', text: "Hi! I’m Jimena’s AI Assistant 🤖. You can ask me about her background, skills, or projects!" }
   ])
 
   function handleSend() {
@@ -13,17 +14,17 @@ export default function Chatbot() {
     setHistory(h => [...h, userMsg])
     
     const lower = q.toLowerCase()
-    let reply = "Hmm, I’m not sure about that. Try asking about Jimena’s major, school, projects or skills!"
+    let reply = "Hmm, I’m not sure about that. Try asking about Jimena’s major, school, or skills!"
 
     
     if (lower.includes('name')) {
-      reply = "Her name is Jimena Bello!🌸"
+      reply = "Her name is Jimena Bello!🌸 "
     } else if (lower.includes('school') || lower.includes('university')) {
       reply = "Jimena studies Information Technology at Kean University 🎓"
     } else if (lower.includes('major')) {
       reply = "Jimena’s major is Information Technology 💻"
     } else if (lower.includes('skills')) {
-      reply = "She’s skilled in HTML, CSS, JavaScript, Python, MySQL, React, and Node.js 💪"
+      reply = "She’s skilled in HTML, CSS, JavaScript, Python, and SQL  "
     } else if (lower.includes('project')) {
       reply = "One of her projects includes an AI-powered portfolio website — like this one!"
     } else if (lower.includes('hobby') || lower.includes('fun')) {
